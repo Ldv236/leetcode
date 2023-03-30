@@ -14,6 +14,8 @@ public class RemoveElement {
     public static void main(String[] args) {
         res = removeElement(arr, val);
         res = removeElement(arr2, val2);
+        res = removeElementOther(arr, val);
+        res = removeElementOther(arr2, val2);
     }
 
     public static int removeElement(int[] nums, int val) {
@@ -36,5 +38,14 @@ public class RemoveElement {
             }
         }
         return k;
+    }
+
+
+    public static int removeElementOther(int[] nums, int val) {
+        int i = 0;
+        for (int n : nums)
+            if (n != val)
+                nums[i++] = n;
+        return i;
     }
 }
