@@ -1,4 +1,4 @@
-package LeetCode;
+package LeetCode.Java;
 
 public class IndexFirstOccurrencyString {
     static String haystack = "sadbutsad";
