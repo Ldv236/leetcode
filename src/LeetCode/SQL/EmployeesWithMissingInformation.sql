@@ -27,7 +27,8 @@ Write an SQL query to report the IDs of all the employees with missing informati
 The employee's name is missing, or
 The employee's salary is missing.
 Return the result table ordered by employee_id in ascending order.*/
-SELECT CASE WHEN e.employee_id is not null THEN e.employee_id ELSE s.employee_id END as employee_id
+SELECT ISNULL(e.employee_id, s.employee_id) as employee_id
+--SELECT CASE WHEN e.employee_id is not null THEN e.employee_id ELSE s.employee_id END as employee_id
 FROM Employees e
          FULL JOIN  Salaries  s
                     ON e.employee_id = s.employee_id
