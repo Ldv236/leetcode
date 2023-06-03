@@ -3,8 +3,9 @@ package LeetCode.Java;
 import java.util.ArrayList;
 
 public class IsValid {
+    static void method() {
 
-
+    }
     //sol.isValid("(){[]");
 
     public boolean isValid(String s) {
