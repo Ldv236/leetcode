@@ -1,14 +1,31 @@
 package LeetCode.find;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class SimpleFind {
     public static void main(String[] args) {
+
+        Random random = new Random();
         int[] nums1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int target1 = 8;
         String str1 = "";
-
         System.out.println(linearContains(nums1, target1));
-        System.out.println(linearFindIndex(nums1, target1));
-        System.out.println(binaryFindIndex(nums1, target1));
+
+
+        int[] genArr1 = new int[10_000_000];
+        for (int i = 0; i < genArr1.length; i++) {
+            genArr1[i] = i;
+        }
+        int[] genArr2 = Arrays.copyOf(genArr1, 10_000_000);
+
+        long start1 = System.currentTimeMillis();
+        System.out.println(linearFindIndex(genArr1, 9_999_888));
+        System.out.println(System.currentTimeMillis() - start1);
+
+        long start2 = System.currentTimeMillis();
+        System.out.println(binaryFindIndex(genArr2, 9_999_888));
+        System.out.println(System.currentTimeMillis() - start2);
     }
 
     public static boolean linearContains(int[] arr, int element) {
